@@ -21,9 +21,9 @@ public class SelectionSort {
         }
     }
 
-    private static void swap(Object[] arr, int i, int j) {
-        Object t = arr[i];
-        arr[i] = arr[j];
-        arr[j] = t;
+    private static void swap(Object[] arr, int index1, int index2) {
+        Object t = arr[index1];
+        arr[index1] = arr[index2];
+        arr[index2] = t;
     }
 }
