@@ -1,4 +1,4 @@
-package sort.Insertion;
+package sort.Selection;
 
 import sort.common.SortTestHelper;
 
@@ -7,27 +7,24 @@ import java.util.Arrays;
 /**
  * Created by chao on 2018/10/26.
  */
-public class CompareTest {
-
-    // 比较SelectionSort和InsertionSort两种排序算法的性能效率
-    // 此时，插入排序比选择排序性能略低
-    //    Test for random array, size = 20000 , random range [0, 20000]
-    //    SelectionSort : 0.830202353 s
-    //    InsertionSort : 1.133224556 s
-
-    // 优化后，插入排序比选择排序性能略好？结果似乎相反
+public class CompareTest2 {
+    // 比较SelectionSort, SelectionSort2和InsertionSort两种排序算法的性能效率
+    // 优化后，插入排序比选择排序性能略好
     // 对于有序性强的数组，插入排序远远优于选择排序
     //    Test for random array, size = 20000 , random range [0, 20000]
-    //    SelectionSort : 0.544109687 s
-    //    InsertionSort : 0.815900113 s
+    //    InsertionSort : 0.671109518 s
+    //    SelectionSort : 0.724769497 s
+    //    SelectionSort2 : 0.373436681 s
     //
     //    Test for more ordered random array, size = 20000 , random range [0,3]
-    //    SelectionSort : 0.358298277 s
-    //    InsertionSort : 0.306589717 s
+    //    InsertionSort : 0.317105859 s
+    //    SelectionSort : 0.359093898 s
+    //    SelectionSort2 : 0.667297035 s
     //
     //    Test for nearly ordered array, size = 20000 , swap time = 100
-    //    SelectionSort : 0.280540428 s
-    //    InsertionSort : 0.002524146 s
+    //    InsertionSort : 0.003193303 s
+    //    SelectionSort : 0.294546217 s
+    //    SelectionSort2 : 0.258841769 s
     public static void main(String[] args) {
 
         int N = 20000;
@@ -37,9 +34,11 @@ public class CompareTest {
 
         Integer[] arr1 = SortTestHelper.generateRandomArray(N, 0, N);
         Integer[] arr2 = Arrays.copyOf(arr1, arr1.length);
+        Integer[] arr3 = Arrays.copyOf(arr1, arr1.length);
 
-        SortTestHelper.testSort("sort.Selection.SelectionSort", arr1);
-        SortTestHelper.testSort("sort.Insertion.InsertionSort", arr2);
+        SortTestHelper.testSort("sort.Insertion.InsertionSort", arr1);
+        SortTestHelper.testSort("sort.Selection.SelectionSort", arr2);
+        SortTestHelper.testSort("sort.Selection.SelectionSort2", arr3);
 
         System.out.println();
 
@@ -49,9 +48,11 @@ public class CompareTest {
 
         arr1 = SortTestHelper.generateRandomArray(N, 0, 3);
         arr2 = Arrays.copyOf(arr1, arr1.length);
+        arr3 = Arrays.copyOf(arr1, arr1.length);
 
-        SortTestHelper.testSort("sort.Selection.SelectionSort", arr1);
-        SortTestHelper.testSort("sort.Insertion.InsertionSort", arr2);
+        SortTestHelper.testSort("sort.Insertion.InsertionSort", arr1);
+        SortTestHelper.testSort("sort.Selection.SelectionSort", arr2);
+        SortTestHelper.testSort("sort.Selection.SelectionSort2", arr3);
 
         System.out.println();
 
@@ -62,9 +63,10 @@ public class CompareTest {
 
         arr1 = SortTestHelper.generateNearlyOrderedArray(N, swapTimes);
         arr2 = Arrays.copyOf(arr1, arr1.length);
+        arr3 = Arrays.copyOf(arr1, arr1.length);
 
-        SortTestHelper.testSort("sort.Selection.SelectionSort", arr1);
-        SortTestHelper.testSort("sort.Insertion.InsertionSort", arr2);
-
+        SortTestHelper.testSort("sort.Insertion.InsertionSort", arr1);
+        SortTestHelper.testSort("sort.Selection.SelectionSort", arr2);
+        SortTestHelper.testSort("sort.Selection.SelectionSort2", arr3);
     }
 }
