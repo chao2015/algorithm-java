@@ -10,7 +10,7 @@ import java.util.Arrays;
 public class ShellSortTest {
 
     public static void main(String[] args) {
-        int n = 20000;
+        int n = 1000000;  // 1.105218215 s
         Integer[] arr = SortTestHelper.generateRandomArray(n, 0, n);
         SortTestHelper.testSort("sort.Shell.ShellSort", arr);
     }
