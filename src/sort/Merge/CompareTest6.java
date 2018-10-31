@@ -13,6 +13,9 @@ public class CompareTest6 {
 
     // 比较Merge Sort和Merge Sort Bottom Up两种排序算法的性能效率
     // 整体而言, 两种算法的效率是差不多的。但是如果进行仔细测试, 自底向上的归并排序会略胜一筹。
+    // 使用更科学的比较方式, 每次比较都运行多次测试用例, 取平均值
+    // 同时比较了优化和不优化两种情况
+    // 总体来说, Merge Sort BU 比 Merge Sort 快一些。但优化后, 二者的性能差距不明显
     public static void main(String[] args) {
 
         int N = 1000000;
