@@ -12,8 +12,7 @@ public class MergeSort2 {
     private MergeSort2(){}
 
     public static void sort(Comparable[] arr) {
-        int n = arr.length;
-        sort(arr, 0, n-1);
+        sort(arr, 0, arr.length-1);
     }
 
     // 递归使用归并排序,对arr[l...r]的范围进行排序
@@ -25,7 +24,7 @@ public class MergeSort2 {
             return;
         }
 
-        int mid = (l+r)/2;
+        int mid = l + (r-l)/2;
         sort(arr, l, mid);
         sort(arr, mid+1, r);
         // 优化1: 对于arr[mid] <= arr[mid+1]的情况,不进行merge

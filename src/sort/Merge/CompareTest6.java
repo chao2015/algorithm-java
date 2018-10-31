@@ -12,7 +12,7 @@ public class CompareTest6 {
     // 优化之后的MergeSort2性能比MergeSort更优
 
     // 比较Merge Sort和Merge Sort Bottom Up两种排序算法的性能效率
-    // 整体而言, 两种算法的效率是差不多的。但是如果进行仔细测试, MergeSort2的归并排序会略胜一筹。
+    // 整体而言, 两种算法的效率是差不多的。但是如果进行仔细测试, 自底向上的归并排序会略胜一筹。
     public static void main(String[] args) {
 
         int N = 1000000;
